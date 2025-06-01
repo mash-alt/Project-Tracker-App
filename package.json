@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "populate": "node src/test/populatePosts.js",
+    "populate-users": "node src/test/populateUsers.js",
+    "populate-posts": "node src/test/populatePosts.js"
   },
   "dependencies": {
     "firebase": "^11.8.1",
