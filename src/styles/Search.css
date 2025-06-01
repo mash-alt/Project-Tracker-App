@@ -1,0 +1,238 @@
+.search-container {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+.search-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.search-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  text-align: center;
+  margin: 0;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.search-input-container {
+  position: relative;
+  padding: 0 2rem 1rem 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #f7fafc;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-spinner {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+.search-loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.search-error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  margin: 0 2rem 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #feb2b2;
+}
+
+.search-results-header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f7fafc;
+}
+
+.search-results-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.users-list {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+}
+
+.user-card:hover {
+  background: #f7fafc;
+}
+
+.user-card:last-child {
+  border-bottom: none;
+}
+
+.user-card-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.user-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid #e2e8f0;
+  background: #f7fafc;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.connect-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.connect-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.message-button {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.message-button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .search-content {
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .search-title {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  
+  .search-input-container {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .search-results-header {
+    padding: 1rem;
+  }
+  
+  .user-card {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .user-card-content {
+    margin-bottom: 0;
+  }
+  
+  .user-actions {
+    justify-content: center;
+  }
+  
+  .connect-button,
+  .message-button {
+    flex: 1;
+    max-width: 120px;
+  }
+}
